@@ -1,5 +1,6 @@
 package org.example.jpaopgave.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 
 import jakarta.persistence.Id;
@@ -8,10 +9,8 @@ import jakarta.persistence.Id;
 public class Unicode {
     @Id
     private int unicode;
-
+    @Column(name = "character_value")
     private char character;
-    private String description;
-    private String name;
 
     public char getCharacter() {
         return character;
@@ -19,22 +18,6 @@ public class Unicode {
 
     public void setCharacter(char character) {
         this.character = character;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public int getUnicode() {

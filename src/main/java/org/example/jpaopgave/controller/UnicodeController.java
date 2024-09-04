@@ -30,8 +30,8 @@ public class UnicodeController {
     @GetMapping("/char/{c}/amount/{amount}")
     public Set<Character> characters (@PathVariable char c, @PathVariable int amount) {
         Set<Character> characters = new HashSet<>();
-        for (int i = (int) c; i < ((int) c + amount); i++) {
-            unicodeRepository.findAllByUnicode(i);
+        for (int i = c; i < ((int) c + amount); i++) {
+            characters.add(unicodeRepository.findAllByUnicode(i).getFirst().getCharacter());
         }
         return characters;
     }
